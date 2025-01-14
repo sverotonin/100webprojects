@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phase 2 - DOM & APIs | JavaScript Projects</title>
+    <style>
+      :root {
+        --primary: #2563eb;
+        --secondary: #475569;
+        --accent: #3b82f6;
+        --background: #f8fafc;
+        --card: #ffffff;
+        --border: #e2e8f0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        line-height: 1.6;
+        background: var(--background);
+        color: var(--secondary);
+      }
+
+      header {
+        background: var(--card);
+        padding: 2rem 1rem;
+        text-align: center;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 2rem;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 1rem;
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+
+      h1 {
+        color: var(--primary);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .project-card {
+        background: var(--card);
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .project-links a {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.875rem;
+      }
+
+      .project-links a:hover {
+        text-decoration: underline;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1rem 0;
+      }
+
+      .skill-tag {
+        background: var(--background);
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        color: var(--secondary);
+      }
+
+      .status {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .status.not-started {
+        background: #f1f5f9;
+        color: #64748b;
+      }
+
+      .status.in-progress {
+        background: #fef3c7;
+        color: #b45309;
+      }
+
+      .status.complete {
+        background: #dcfce7;
+        color: #15803d;
+      }
+
+      .api-note {
+        background: #fee2e2;
+        border: 1px solid #fecaca;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        color: #991b1b;
+        font-size: 0.875rem;
+      }
+
+      @media (max-width: 768px) {
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="../../index.html" class="back-link">← Back to All Phases</a>
+        <h1>Phase 2 - DOM & APIs</h1>
+        <p>
+          Building interactive applications with external APIs and advanced DOM
+          manipulation
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="api-note">
+        Note: Some projects may require API keys. Make sure to read each
+        project's README for setup instructions.
+      </div>
+
+      <div class="project-grid">
+        <!-- Weather Dashboard -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Weather Dashboard</h3>
+          <p>
+            Create a weather dashboard using a weather API. Display current
+            weather and forecasts with dynamic updates.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">Fetch API</span>
+            <span class="skill-tag">Async/Await</span>
+            <span class="skill-tag">Weather API</span>
+            <span class="skill-tag">DOM Updates</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">View Code</a>
+          </div>
+        </div>
+
+        <!-- Movie Info App -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Movie Info App</h3>
+          <p>
+            Build a movie information app using TMDB API. Search movies and
+            display their details, ratings, and cast.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">TMDB API</span>
+            <span class="skill-tag">Search Function</span>
+            <span class="skill-tag">Dynamic Content</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">View Code</a>
+          </div>
+        </div>
+
+        <!-- GitHub User Search -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>GitHub User Search</h3>
+          <p>
+            Create a GitHub user search application using the GitHub API.
+            Display user profiles and repositories.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">GitHub API</span>
+            <span class="skill-tag">OAuth</span>
+            <span class="skill-tag">Data Visualization</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">View Code</a>
+          </div>
+        </div>
+
+        <!-- Country Information -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Country Information</h3>
+          <p>
+            Build a country information app using the REST Countries API.
+            Display flags, population, and other details.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">REST Countries API</span>
+            <span class="skill-tag">Data Filtering</span>
+            <span class="skill-tag">Search/Filter</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">View Code</a>
+          </div>
+        </div>
+
+        <!-- Recipe Search -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Recipe Search</h3>
+          <p>
+            Create a recipe search application using a food API. Display
+            recipes, ingredients, and cooking instructions.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">Food API</span>
+            <span class="skill-tag">Search Function</span>
+            <span class="skill-tag">Filter/Sort</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">View Code</a>
+          </div>
+        </div>
+
+        <!-- Add more project cards as needed -->
+      </div>
+    </main>
+  </body>
+</html>

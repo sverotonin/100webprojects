@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phase 5 - Professional Projects | JavaScript Projects</title>
+    <style>
+      :root {
+        --primary: #2563eb;
+        --secondary: #475569;
+        --accent: #3b82f6;
+        --background: #f8fafc;
+        --card: #ffffff;
+        --border: #e2e8f0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        line-height: 1.6;
+        background: var(--background);
+        color: var(--secondary);
+      }
+
+      header {
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
+        padding: 3rem 1rem;
+        text-align: center;
+        color: white;
+        margin-bottom: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.1) 25%,
+            transparent 25%
+          ),
+          linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0.1) 25%,
+            transparent 25%
+          ),
+          linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%),
+          linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%);
+        background-size: 20px 20px;
+        background-position:
+          0 0,
+          0 10px,
+          10px -10px,
+          -10px 0px;
+        opacity: 0.3;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 1rem;
+        color: #93c5fd;
+        text-decoration: none;
+        position: relative;
+        z-index: 1;
+      }
+
+      .back-link:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      header p {
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .pro-note {
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        color: white;
+        font-size: 0.875rem;
+        line-height: 1.7;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .project-card {
+        background: var(--card);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #3b82f6, #2563eb);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-card:hover::before {
+        opacity: 1;
+      }
+
+      .project-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1rem 0;
+      }
+
+      .skill-tag {
+        background: #f8fafc;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        color: var(--secondary);
+        border: 1px solid #e2e8f0;
+        transition: all 0.2s;
+      }
+
+      .skill-tag:hover {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+
+      .status {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .status.not-started {
+        background: #f1f5f9;
+        color: #64748b;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .project-links a {
+        flex: 1;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: all 0.2s;
+      }
+
+      .project-links a:first-child {
+        background: var(--primary);
+        color: white;
+      }
+
+      .project-links a:last-child {
+        border: 1px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .project-links a:first-child:hover {
+        background: #1e40af;
+      }
+
+      .project-links a:last-child:hover {
+        background: #f1f5f9;
+      }
+
+      .complexity {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border);
+      }
+
+      .complexity-label {
+        font-size: 0.75rem;
+        color: var(--secondary);
+      }
+
+      .complexity-meter {
+        flex: 1;
+        height: 4px;
+        background: #e2e8f0;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      .complexity-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #3b82f6, #2563eb);
+        border-radius: 2px;
+      }
+
+      @media (max-width: 768px) {
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="../../index.html" class="back-link">← Back to All Phases</a>
+        <h1>Phase 5 - Professional Projects</h1>
+        <p>
+          Building production-ready, full-stack applications with professional
+          development practices
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="pro-note">
+        These projects represent professional-grade applications that combine
+        all previously learned concepts. Each project includes authentication,
+        database integration, testing, and deployment configurations. They're
+        designed to be portfolio pieces that demonstrate your ability to build
+        production-ready applications.
+      </div>
+
+      <div class="project-grid">
+        <!-- E-commerce Platform -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>E-commerce Platform</h3>
+          <p>
+            Build a full-featured e-commerce platform with product management,
+            cart functionality, and payment processing.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Stripe</span>
+            <span class="skill-tag">Redux</span>
+          </div>
+          <div class="complexity">
+            <span class="complexity-label">Complexity</span>
+            <div class="complexity-meter">
+              <div class="complexity-fill" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">Live Demo</a>
+            <a href="#" target="_blank">Source Code</a>
+          </div>
+        </div>
+
+        <!-- Blog Platform -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Blog Platform</h3>
+          <p>
+            Create a full-featured blogging platform with rich text editing,
+            user management, and content organization.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Auth</span>
+            <span class="skill-tag">SEO</span>
+          </div>
+          <div class="complexity">
+            <span class="complexity-label">Complexity</span>
+            <div class="complexity-meter">
+              <div class="complexity-fill" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">Live Demo</a>
+            <a href="#" target="_blank">Source Code</a>
+          </div>
+        </div>
+
+        <!-- Social Network -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Social Network</h3>
+          <p>
+            Develop a social networking platform with real-time features, user
+            connections, and content sharing.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">GraphQL</span>
+            <span class="skill-tag">WebSocket</span>
+            <span class="skill-tag">Redis</span>
+          </div>
+          <div class="complexity">
+            <span class="complexity-label">Complexity</span>
+            <div class="complexity-meter">
+              <div class="complexity-fill" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">Live Demo</a>
+            <a href="#" target="_blank">Source Code</a>
+          </div>
+        </div>
+
+        <!-- Project Management -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Project Management System</h3>
+          <p>
+            Build a project management tool with task tracking, team
+            collaboration, and reporting features.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">Vue.js</span>
+            <span class="skill-tag">Express</span>
+            <span class="skill-tag">Socket.io</span>
+            <span class="skill-tag">Charts</span>
+          </div>
+          <div class="complexity">
+            <span class="complexity-label">Complexity</span>
+            <div class="complexity-meter">
+              <div class="complexity-fill" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">Live Demo</a>
+            <a href="#" target="_blank">Source Code</a>
+          </div>
+        </div>
+
+        <!-- Learning Platform -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Learning Management System</h3>
+          <p>
+            Create an educational platform with course management, video
+            lessons, and progress tracking.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Video</span>
+          </div>
+          <div class="complexity">
+            <span class="complexity-label">Complexity</span>
+            <div class="complexity-meter">
+              <div class="complexity-fill" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">Live Demo</a>
+            <a href="#" target="_blank">Source Code</a>
+          </div>
+        </div>
+
+        <!-- Real Estate Platform -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Real Estate Platform</h3>
+          <p>
+            Build a real estate platform with property listings, search
+            functionality, and virtual tours.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">Maps API</span>
+            <span class="skill-tag">3D View</span>
+            <span class="skill-tag">Filters</span>
+          </div>
+          <div class="complexity">
+            <span class="complexity-label">Complexity</span>
+            <div class="complexity-meter">
+              <div class="complexity-fill" style="width: 88%"></div>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">Live Demo</a>
+            <a href="#" target="_blank">Source Code</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phase 4 - Advanced Concepts | JavaScript Projects</title>
+    <style>
+      :root {
+        --primary: #2563eb;
+        --secondary: #475569;
+        --accent: #3b82f6;
+        --background: #f8fafc;
+        --card: #ffffff;
+        --border: #e2e8f0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        line-height: 1.6;
+        background: var(--background);
+        color: var(--secondary);
+      }
+
+      header {
+        background: var(--card);
+        padding: 2rem 1rem;
+        text-align: center;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 2rem;
+        background: linear-gradient(to right, #1e3a8a, #2563eb);
+        color: white;
+      }
+
+      header p {
+        color: #e2e8f0;
+      }
+
+      header h1 {
+        color: white !important;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 1rem;
+        color: #93c5fd;
+        text-decoration: none;
+      }
+
+      .back-link:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      h1 {
+        color: var(--primary);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .project-card {
+        background: var(--card);
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid var(--border);
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .project-links a {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        border: 1px solid currentColor;
+        transition: all 0.2s;
+      }
+
+      .project-links a:hover {
+        background: var(--accent);
+        color: white;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1rem 0;
+      }
+
+      .skill-tag {
+        background: #f1f5f9;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        color: var(--secondary);
+        border: 1px solid #e2e8f0;
+      }
+
+      .status {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .status.not-started {
+        background: #f1f5f9;
+        color: #64748b;
+      }
+
+      .status.in-progress {
+        background: #fef3c7;
+        color: #b45309;
+      }
+
+      .status.complete {
+        background: #dcfce7;
+        color: #15803d;
+      }
+
+      .advanced-note {
+        background: #818cf8;
+        border: 1px solid #6366f1;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        color: white;
+        font-size: 0.875rem;
+        line-height: 1.7;
+      }
+
+      .difficulty-indicator {
+        display: flex;
+        gap: 0.25rem;
+        margin-top: 0.5rem;
+      }
+
+      .difficulty-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #cbd5e1;
+      }
+
+      .difficulty-dot.active {
+        background: #6366f1;
+      }
+
+      @media (max-width: 768px) {
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="../../index.html" class="back-link">← Back to All Phases</a>
+        <h1>Phase 4 - Advanced Concepts</h1>
+        <p>
+          Mastering real-time features, advanced state management, and complex
+          application architectures
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="advanced-note">
+        These projects incorporate advanced JavaScript concepts, real-time
+        functionality, and professional development practices. You'll be working
+        with WebSocket, WebRTC, complex state management, and more. Make sure to
+        review the prerequisites for each project before starting.
+      </div>
+
+      <div class="project-grid">
+        <!-- Real-time Chat -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Real-time Chat Application</h3>
+          <p>
+            Build a real-time chat application with WebSocket, user presence,
+            and message history.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">WebSocket</span>
+            <span class="skill-tag">Real-time Data</span>
+            <span class="skill-tag">User Auth</span>
+            <span class="skill-tag">Socket.io</span>
+          </div>
+          <div class="difficulty-indicator">
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">View Code</a>
+          </div>
+        </div>
+
+        <!-- Video Chat -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Video Chat Application</h3>
+          <p>
+            Create a video chat application using WebRTC with peer-to-peer
+            connections and room management.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">WebRTC</span>
+            <span class="skill-tag">Media Streams</span>
+            <span class="skill-tag">P2P</span>
+            <span class="skill-tag">Room System</span>
+          </div>
+          <div class="difficulty-indicator">
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">View Code</a>
+          </div>
+        </div>
+
+        <!-- Multiplayer Game -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Multiplayer Tic Tac Toe</h3>
+          <p>
+            Develop a multiplayer Tic Tac Toe game with real-time updates and
+            matchmaking.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">Game Logic</span>
+            <span class="skill-tag">Multiplayer</span>
+            <span class="skill-tag">State Sync</span>
+            <span class="skill-tag">Matchmaking</span>
+          </div>
+          <div class="difficulty-indicator">
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">View Code</a>
+          </div>
+        </div>
+
+        <!-- File Sharing -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>File Sharing App</h3>
+          <p>
+            Build a file sharing application with drag-and-drop, progress
+            tracking, and secure transfers.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">File API</span>
+            <span class="skill-tag">Chunking</span>
+            <span class="skill-tag">Progress Events</span>
+            <span class="skill-tag">Security</span>
+          </div>
+          <div class="difficulty-indicator">
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">View Code</a>
+          </div>
+        </div>
+
+        <!-- Real-time Dashboard -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Real-time Analytics Dashboard</h3>
+          <p>
+            Create a real-time analytics dashboard with live data updates and
+            interactive visualizations.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">WebSocket</span>
+            <span class="skill-tag">D3.js</span>
+            <span class="skill-tag">Data Viz</span>
+            <span class="skill-tag">Analytics</span>
+          </div>
+          <div class="difficulty-indicator">
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">View Code</a>
+          </div>
+        </div>
+
+        <!-- Collaborative Editor -->
+        <div class="project-card">
+          <span class="status not-started">Not Started</span>
+          <h3>Collaborative Code Editor</h3>
+          <p>
+            Build a real-time collaborative code editor with syntax highlighting
+            and live collaboration.
+          </p>
+          <div class="skills">
+            <span class="skill-tag">OT/CRDT</span>
+            <span class="skill-tag">WebSocket</span>
+            <span class="skill-tag">Monaco Editor</span>
+            <span class="skill-tag">Collaboration</span>
+          </div>
+          <div class="difficulty-indicator">
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+            <span class="difficulty-dot active"></span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank">View Project</a>
+            <a href="#" target="_blank">View Code</a>
+          </div>
+        </div>
+
+        <!-- Add more project cards as needed -->
+      </div>
+    </main>
+  </body>
+</html>

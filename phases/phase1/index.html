@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 1 - Fundamentals | JavaScript Projects</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #475569;
+            --accent: #3b82f6;
+            --background: #f8fafc;
+            --card: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: var(--background);
+            color: var(--secondary);
+        }
+
+        header {
+            background: var(--card);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+            background: linear-gradient(to right, #3b82f6, #2563eb);
+            color: white;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            color: #e2e8f0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .phase-info {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            color: #0369a1;
+            font-size: 0.875rem;
+            line-height: 1.7;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: var(--card);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+            border: 1px solid var(--border);
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .skill-tag {
+            background: #f1f5f9;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            color: var(--secondary);
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .status.not-started {
+            background: #f1f5f9;
+            color: #64748b;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-links a {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .project-links a:first-child {
+            background: var(--primary);
+            color: white;
+        }
+
+        .project-links a:last-child {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .project-links a:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../../index.html" class="back-link">← Back to All Phases</a>
+            <h1>Phase 1 - Fundamentals</h1>
+            <p>Building the foundation with DOM manipulation and basic JavaScript concepts</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="phase-info">
+            Phase 1 focuses on core JavaScript fundamentals and DOM manipulation. These projects will help you build a strong foundation in JavaScript programming.
+        </div>
+
+        <div class="project-grid">
+            <!-- 1. Color Flipper -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>1. Color Flipper</h3>
+                <p>Generate and display random colors with their hex values. Practice DOM manipulation and color handling.</p>
+                <div class="skills">
+                    <span class="skill-tag">DOM Manipulation</span>
+                    <span class="skill-tag">Event Handling</span>
+                    <span class="skill-tag">Math.random()</span>
+                </div>
+                        <div class="project-links">
+                    <a href="./1-color-flipper/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/1-color-flipper">View Code</a>
+                </div>
+            </div>
+
+            <!-- 2. Counter -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>2. Counter</h3>
+                <p>Create an interactive counter with increment, decrement, and reset functionality.</p>
+                <div class="skills">
+                    <span class="skill-tag">DOM Manipulation</span>
+                    <span class="skill-tag">Event Listeners</span>
+                    <span class="skill-tag">Number Operations</span>
+                </div>
+                <div class="project-links">
+                    <a href="./2-counter/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/2-counter">View Code</a>
+                </div>
+            </div>
+
+            <!-- 3. Review Carousel -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>3. Review Carousel</h3>
+                <p>Build a carousel to display reviews with next/previous navigation and random review selection.</p>
+                <div class="skills">
+                    <span class="skill-tag">Arrays</span>
+                    <span class="skill-tag">DOM Updates</span>
+                    <span class="skill-tag">Event Handling</span>
+                </div>
+                <div class="project-links">
+                    <a href="./3-review-carousel/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/3-review-carousel">View Code</a>
+                </div>
+            </div>
+
+            <!-- 4. Responsive Navbar -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>4. Responsive Navbar</h3>
+                <p>Create a responsive navigation bar with mobile menu toggle functionality.</p>
+                <div class="skills">
+                    <span class="skill-tag">Responsive Design</span>
+                    <span class="skill-tag">CSS Classes</span>
+                    <span class="skill-tag">Click Events</span>
+                </div>
+                <div class="project-links">
+                    <a href="./4-responsive-navbar/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/4-responsive-navbar">View Code</a>
+                </div>
+            </div>
+
+            <!-- 5. Sidebar Toggle -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>5. Sidebar Toggle</h3>
+                <p>Implement a collapsible sidebar with smooth transitions and animations.</p>
+                <div class="skills">
+                    <span class="skill-tag">CSS Transitions</span>
+                    <span class="skill-tag">Class Toggle</span>
+                    <span class="skill-tag">UI Animation</span>
+                </div>
+                <div class="project-links">
+                    <a href="./5-sidebar-toggle/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/5-sidebar-toggle">View Code</a>
+                </div>
+            </div>
+
+            <!-- 6. Modal Window -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>6. Modal Window</h3>
+                <p>Create a modal window with open/close functionality and overlay effects.</p>
+                <div class="skills">
+                    <span class="skill-tag">DOM Manipulation</span>
+                    <span class="skill-tag">Event Handling</span>
+                    <span class="skill-tag">CSS Display</span>
+                </div>
+                <div class="project-links">
+                    <a href="./6-modal-window/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/6-modal-window">View Code</a>
+                </div>
+            </div>
+
+            <!-- 7. FAQ Page -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>7. FAQ Page</h3>
+                <p>Build an FAQ page with expandable/collapsible questions and answers.</p>
+                <div class="skills">
+                    <span class="skill-tag">Accordion Logic</span>
+                    <span class="skill-tag">Event Delegation</span>
+                    <span class="skill-tag">CSS Transitions</span>
+                </div>
+                <div class="project-links">
+                    <a href="./7-faq-page/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/7-faq-page">View Code</a>
+                </div>
+            </div>
+
+            <!-- 8. Restaurant Menu -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>8. Restaurant Menu</h3>
+                <p>Create a filterable restaurant menu with categories and dynamic content.</p>
+                <div class="skills">
+                    <span class="skill-tag">Array Methods</span>
+                    <span class="skill-tag">Filtering</span>
+                    <span class="skill-tag">Dynamic HTML</span>
+                </div>
+                <div class="project-links">
+                    <a href="./8-restaurant-menu/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/8-restaurant-menu">View Code</a>
+                </div>
+            </div>
+
+            <!-- 9. Video Background -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>9. Video Background</h3>
+                <p>Implement a video background with play/pause functionality and overlay text.</p>
+                <div class="skills">
+                    <span class="skill-tag">Video API</span>
+                    <span class="skill-tag">DOM Events</span>
+                    <span class="skill-tag">CSS Positioning</span>
+                </div>
+                <div class="project-links">
+                    <a href="./9-video-background/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/9-video-background">View Code</a>
+                </div>
+            </div>
+
+            <!-- 10. Scroll Progress -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>10. Scroll Progress</h3>
+                <p>Create a progress bar that shows reading progress as user scrolls the page.</p>
+                <div class="skills">
+                    <span class="skill-tag">Scroll Events</span>
+                    <span class="skill-tag">Math Calculations</span>
+                    <span class="skill-tag">CSS Progress</span>
+                </div>
+                <div class="project-links">
+                    <a href="./10-scroll-progress/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/10-scroll-progress">View Code</a>
+                </div>
+            </div>
+
+            <!-- 11. Tabs Component -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>11. Tabs Component</h3>
+                <p>Build a tabbed interface to switch between different content sections.</p>
+                <div class="skills">
+                    <span class="skill-tag">Event Delegation</span>
+                    <span class="skill-tag">Content Switch</span>
+                    <span class="skill-tag">Active States</span>
+                </div>
+                <div class="project-links">
+                    <a href="./11-tabs-component/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/11-tabs-component">View Code</a>
+                </div>
+            </div>
+
+            <!-- 12. Countdown Timer -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>12. Countdown Timer</h3>
+                <p>Create a countdown timer with start, pause, and reset functionality.</p>
+                <div class="skills">
+                    <span class="skill-tag">Date Object</span>
+                    <span class="skill-tag">setInterval</span>
+                    <span class="skill-tag">Time Calculations</span>
+                </div>
+                <div class="project-links">
+                    <a href="./12-countdown-timer/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/12-countdown-timer">View Code</a>
+                </div>
+            </div>
+
+            <!-- 13. Lorem Ipsum Generator -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>13. Lorem Ipsum Generator</h3>
+                <p>Build a lorem ipsum text generator with customizable paragraph count.</p>
+                <div class="skills">
+                    <span class="skill-tag">Array Methods</span>
+                    <span class="skill-tag">Form Handling</span>
+                    <span class="skill-tag">Text Generation</span>
+                </div>
+                <div class="project-links">
+                    <a href="./13-lorem-ipsum/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/13-lorem-ipsum">View Code</a>
+                </div>
+            </div>
+
+            <!-- 14. Grocery List -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>14. Grocery List</h3>
+                <p>Create a grocery list app with add, edit, and delete functionality.</p>
+                <div class="skills">
+                    <span class="skill-tag">Local Storage</span>
+                    <span class="skill-tag">CRUD Operations</span>
+                    <span class="skill-tag">Array Methods</span>
+                </div>
+                <div class="project-links">
+                    <a href="./14-grocery-list/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/14-grocery-list">View Code</a>
+                </div>
+            </div>
+
+            <!-- 15. Image Slider -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>15. Image Slider</h3>
+                <p>Build an image slider with next/previous controls and automatic slideshow.</p>
+                <div class="skills">
+                    <span class="skill-tag">CSS Transitions</span>
+                    <span class="skill-tag">setInterval</span>
+                    <span class="skill-tag">Array Navigation</span>
+                </div>
+                <div class="project-links">
+                    <a href="./15-image-slider/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/15-image-slider">View Code</a>
+                </div>
+            </div>
+
+            <!-- 16. Password Generator -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>16. Password Generator</h3>
+                <p>Create a password generator with customizable options for length and character types.</p>
+                <div class="skills">
+                    <span class="skill-tag">Random Generation</span>
+                    <span class="skill-tag">String Methods</span>
+                    <span class="skill-tag">Form Handling</span>
+                </div>
+                <div class="project-links">
+                    <a href="./16-password-generator/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/16-password-generator">View Code</a>
+                </div>
+            </div>
+
+            <!-- 17. Rock Paper Scissors -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>17. Rock Paper Scissors</h3>
+                <p>Build a rock paper scissors game against the computer with score tracking.</p>
+                <div class="skills">
+                    <span class="skill-tag">Game Logic</span>
+                    <span class="skill-tag">Random Choice</span>
+                    <span class="skill-tag">Score Tracking</span>
+                </div>
+                <div class="project-links">
+                    <a href="./17-rock-paper-scissors/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/17-rock-paper-scissors">View Code</a>
+                </div>
+            </div>
+
+            <!-- 18. Tip Calculator -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>18. Tip Calculator</h3>
+                <p>Create a tip calculator with bill splitting and customizable tip percentages.</p>
+                <div class="skills">
+                    <span class="skill-tag">Math Operations</span>
+                    <span class="skill-tag">Form Input</span>
+                    <span class="skill-tag">Number Formatting</span>
+                </div>
+                <div class="project-links">
+                    <a href="./18-tip-calculator/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/18-tip-calculator">View Code</a>
+                </div>
+            </div>
+
+            <!-- 19. Form Validator -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>19. Form Validator</h3>
+                <p>Build a form validator with real-time validation and error messages.</p>
+                <div class="skills">
+                    <span class="skill-tag">Form Validation</span>
+                    <span class="skill-tag">Regular Expressions</span>
+                    <span class="skill-tag">Error Handling</span>
+                </div>
+                <div class="project-links">
+                    <a href="./19-form-validator/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/19-form-validator">View Code</a>
+                </div>
+            </div>
+
+            <!-- 20. Digital Clock -->
+            <div class="project-card">
+                <span class="status not-started">Not Started</span>
+                <h3>20. Digital Clock</h3>
+                <p>Create a digital clock with 12/24 hour format toggle and date display.</p>
+                <div class="skills">
+                    <span class="skill-tag">Date Object</span>
+                    <span class="skill-tag">setInterval</span>
+                    <span class="skill-tag">Time Formatting</span>
+                </div>
+                <div class="project-links">
+                    <a href="./20-digital-clock/index.html">View Project</a>
+                    <a href="https://github.com/yourusername/100-javascript-projects/tree/main/phases/phase1/20-digital-clock">View Code</a>
+                </div>
+            </div>
+            </div>
+    </main>
+</body>
+</html>
